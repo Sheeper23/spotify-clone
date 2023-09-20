@@ -1,16 +1,13 @@
-"use client"
-
 import { GoHomeFill } from 'react-icons/go'
 import { FiSearch } from 'react-icons/fi'
 import { FaSpotify } from 'react-icons/fa'
-import { usePathname } from 'next/navigation'
 import { MdOutlineQueueMusic } from 'react-icons/md'
 import { BiPlus } from 'react-icons/bi'
 import Link from 'next/link'
 import { User } from '@supabase/auth-helpers-nextjs'
+import SidebarLink from './SidebarLink'
 
 export default function Sidebar({ user }: { user: User | null}) {
-    const pathnmame = usePathname()
   
     return (
     <div className="hidden md:flex flex-col w-80 h-full gap-2 select-none">
@@ -21,18 +18,14 @@ export default function Sidebar({ user }: { user: User | null}) {
                 <FaSpotify size={25} />
                 <p>Spotify</p>
             </Link>
-            <Link
-            href="/"
-            className={`${pathnmame === "/" ? "text-white" : "text-gray-400 hover:text-white"} flex items-center gap-4 transition-all duration-300`}>
+            <SidebarLink path="/">
                 <GoHomeFill size={30} />
                 <p>Home</p>
-            </Link>
-            <Link
-            href="/search"
-            className={`${pathnmame === "/search" ? "text-white" : "text-gray-400 hover:text-white"} flex items-center gap-5 transition-all duration-300`}>
+            </SidebarLink>
+            <SidebarLink path="/search">
                 <FiSearch size={25} />
                 <p>Search</p>
-            </Link>
+            </SidebarLink>
         </div>
         <div className="bg-neutral-900 rounded-lg grow p-5">
             <div className="flex justify-between items-center">
