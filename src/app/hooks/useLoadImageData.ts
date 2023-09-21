@@ -1,13 +1,12 @@
 import { Database } from "@/types/supabase";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 export default function useLoadImageData(imagePath: string | null) {
     if (!imagePath) {
         return null
     }
     
-    const supabaseClient = createServerComponentClient<Database>({ cookies })
+    const supabaseClient = createClientComponentClient<Database>()
     
     const { data: imageData } = supabaseClient
     .storage
