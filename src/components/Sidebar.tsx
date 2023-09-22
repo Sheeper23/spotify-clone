@@ -1,3 +1,5 @@
+"use client"
+
 import { GoHomeFill } from 'react-icons/go'
 import { FiSearch } from 'react-icons/fi'
 import { FaSpotify } from 'react-icons/fa'
@@ -8,7 +10,6 @@ import { User } from '@supabase/auth-helpers-nextjs'
 import SidebarLink from './SidebarLink'
 
 export default function Sidebar({ user }: { user: User | null}) {
-  
     return (
     <div className="hidden md:flex flex-col w-80 h-full gap-2 select-none">
         <div className="flex flex-col bg-neutral-900 rounded-lg p-5 gap-5">
@@ -27,7 +28,7 @@ export default function Sidebar({ user }: { user: User | null}) {
                 <p>Search</p>
             </SidebarLink>
         </div>
-        <div className="bg-neutral-900 rounded-lg grow p-5">
+        <div className="bg-neutral-900 rounded-lg h-full p-5">
             <div className="flex justify-between items-center">
                 <div className="flex items-center gap-1 text-gray-400 hover:text-white transition-all duration-300 cursor-pointer">
                     <MdOutlineQueueMusic size={25} />

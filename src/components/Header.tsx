@@ -1,3 +1,5 @@
+"use client"
+
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 import { GoHomeFill } from 'react-icons/go'
 import { FiSearch } from 'react-icons/fi'

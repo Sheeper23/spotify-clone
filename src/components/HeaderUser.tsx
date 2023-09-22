@@ -1,7 +1,9 @@
+"use client"
+
 import { User } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
 
-export default async function HeaderUser({ user }: { user: User | null }) {
+export default function HeaderUser({ user }: { user: User | null }) {
     // const logout = async (formData: FormData) => {
     //     "use server"
 

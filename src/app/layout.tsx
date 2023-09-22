@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 import ToasterProvider from '@/providers/ToasterProvider'
+import QueueProvider from '@/providers/QueueProvider'
 
 const nunito = Nunito({ subsets: ['latin'] })
 
@@ -19,7 +20,9 @@ export default async function RootLayout({
     <html lang="en">
       <body className={`${nunito.className} m-0 h-[100dvh] bg-black text-white`}>
         <ToasterProvider />
-        {children}
+        <QueueProvider>
+          {children}
+        </QueueProvider>
       </body>
     </html>
   )
